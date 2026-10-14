@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Space Grotesk", sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: bolder;
+    text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+input {
+    border-radius: 8px;
+    border: 1.5px solid rgba(0, 0, 0, 0.55);
+
+    margin: 6px 2px;
+    height: 38px;
+    width: 100%;
+
+    max-width: 270px;
+    box-sizing: border-box;
+
+    padding: 0 12px;
+    outline: none;
+
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+    border-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    border-radius: 6px;
+
+    box-shadow:
+        0 10px 15px -3px rgba(0, 0, 0, 0.2),
+        0 4px 6px -2px rgba(0, 0, 0, 0.12),
+        0 0 0 1px rgba(0, 0, 0, 0.03);
+
+    width: min(1000px, 100%);
+    min-height: 560px;
+    height: auto;
+    opacity: 1;
+    transform: translateY(0);
+    transform-origin: center center;
+    will-change: opacity, transform;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+}
+
+.formulario button {
+    margin-top: 20px;
+}
+
+.formulario h1 {
+    text-align: center;
+}
+
+#button, .main_btn {
+    border-radius: 8px;
+    height: 40px;
+    width: 100%;
+    max-width: 270px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background: #fff;
+    color: #111;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#button:hover, .main_btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.switch_link {
+    color: #111;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+#left, #right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    width: 50%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+}
+
+#left {
+    border-right: 1px solid rgba(0, 0, 0, 0.6);
+}
+
+#left h1, #right h1 {
+    text-align: center;
+    white-space: nowrap;
+    margin: 0 0 10px 0;
+}
+
+#left p, #right p {
+    margin: 0 0 20px 0;
+    line-height: 1.5;
+    max-width: 390px;
+}
+
+.form_link {
+    display: none;
+    margin: 18px 0 0 0;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.switch_link {
+    color: #111;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    display: inline-block;
+    margin-left: 4px;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .wrapper {
+        flex-direction: column;
+        width: min(100%, 420px);
+    }
+
+    #left, #right {
+        width: 100%;
+    }
+
+    #left {
+        border-right: none;
+        border-bottom: none;
+    }
+
+    #right {
+        display: none;
+    }
+
+    .form_link {
+        display: block;
+        margin-top: auto;
+        margin-bottom: 0;
+        padding-top: 18px;
+        font-size: 14px;
+    }
+
+    #button, .main_btn {
+        max-width: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .formulario, #button, #signup_btn, input {
+        max-width: 100%;
+    }
+
+    input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #left, #right {
+        padding: 20px 15px;
+    }
+}
+
+.wrapper {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.wrapper.animate-out {
+    animation: out 0.28s ease forwards;
+}
+
+.wrapper.animate-in {
+    animation: in 0.25s ease forwards;
+}
+
+@keyframes in {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes out {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+}
