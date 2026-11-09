@@ -1,0 +1,9 @@
+Flask
+Flask-Limiter
+Flask-SQLAlchemy
+Flask-Talisman
+Flask-WTF
+SQLAlchemy
+Werkzeug
+google-auth[requests]
+python-dotenv
